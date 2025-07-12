@@ -809,7 +809,7 @@ function setupSystemControls() {
 document.addEventListener('DOMContentLoaded', () => {
     setupSystemControls();
 
-    // Regularly update soil moisture value every 2 seconds
-    setInterval(updateSoilMoistureUI, 2000);
+    // Regularly update soil moisture value every 6 seconds
+    setInterval(updateSoilMoistureUI, 6000);
 });
 

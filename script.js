@@ -149,12 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#home').classList.add('visible');
     document.querySelector('#home').style.display = 'flex';
 
-    // Newsletter form submission
-    const newsletterForm = document.querySelector('.newsletter-form');
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        newsletterForm.reset();
-    });
+    
 
     // Stats Counter Animation
     animateStats();
@@ -165,13 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize features when the section becomes visible
     initializeFeatures();
 
-    // Newsletter Form Handling
-    initializeNewsletterForm();
 
-    setupSystemControls();
-
-    // Regularly update soil moisture value every 5 seconds
-    setInterval(updateSoilMoistureUI, 5000);
 
     // Responsive navigation toggle
     const navToggle = document.querySelector('.nav-toggle');

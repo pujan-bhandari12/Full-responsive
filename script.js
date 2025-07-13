@@ -632,31 +632,6 @@ function initializeFeatures() {
     });
 }
 
-// Newsletter Form Handling
-function initializeNewsletterForm() {
-    const form = document.querySelector('.newsletter-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const input = form.querySelector('.newsletter-input');
-            if (input.value.trim()) {
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'newsletter-success';
-                successMessage.textContent = 'Thank you for subscribing!';
-                form.appendChild(successMessage);
-                
-                // Reset form
-                form.reset();
-                
-                // Remove success message after 3 seconds
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 3000);
-            }
-        });
-    }
-}
 
 // Initialize all home page features
 function initializeHomePage() {
@@ -796,7 +771,7 @@ function setupSystemControls() {
                         await turnPumpOff();
                     }
                     updateSoilMoistureUI();
-                });
+                },300000);
             } else {
                 clearInterval(autoInterval);
                 await turnPumpOff();
@@ -809,7 +784,7 @@ function setupSystemControls() {
 document.addEventListener('DOMContentLoaded', () => {
     setupSystemControls();
 
-    // Regularly update soil moisture value every 3.1 minutes
-    setInterval(updateSoilMoistureUI, 190000);
+    // Regularly update soil moisture value every 5 minutes
+    setInterval(updateSoilMoistureUI, 300000);
 });
 
